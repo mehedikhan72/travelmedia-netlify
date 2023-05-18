@@ -113,7 +113,7 @@ export default function Layout() {
 
     const currentUser = `notification-${user.id}`
 
-    const socket = new WebSocket(`ws://127.0.0.1:8000/ws/notification/${currentUser}/`);
+    const socket = new WebSocket(`ws://travelmedia-api-production.up.railway.app/ws/notification/${currentUser}/`);
 
     socket.onmessage = function (e) {
       console.log("Message from server for socket", e.data);
@@ -148,7 +148,7 @@ export default function Layout() {
           <i onClick={() => setMenuClicked(!menuClicked)} className={menuClicked === false ? "scale-1-10 nav-logo bx bx-menu" : "scale-1-10 nav-logo bx bx-x"} id="menu-icon" ></i>
           {/* mt-3 needed to be added to the bell for some alignment when user pfp is available. (not sure why) */}
           <Link ><i onClick={handleNotificationClick} className='scale-1-10 nav-logo bx bx-bell'></i>{unSeenNotifications > 0 && <span className="badge">{unSeenNotifications}</span>}</Link>
-          {user.pfp && <Link to={{ pathname: `/profiles/${user.username}` }}><img className="margin-10 neg-mt-10 small-round-pfp" src={user.social_pfp_link ? `${user.social_pfp_link}` : `http://127.0.0.1:8000${user.pfp}/`} /></Link>}
+          {user.pfp && <Link to={{ pathname: `/profiles/${user.username}` }}><img className="margin-10 neg-mt-10 small-round-pfp" src={user.social_pfp_link ? `${user.social_pfp_link}` : `https://travelmedia-api-production.up.railway.app${user.pfp}/`} /></Link>}
           {!user.pfp && <Link to={{ pathname: `/profiles/${user.username}` }}><i className='margin-10-changed scale-1-10 nav-logo bx bx-user-circle'></i></Link>}
         </div>
       </header>
@@ -211,7 +211,7 @@ export default function Layout() {
           <div key={item.id} className="each-notification display-flex">
             <Link onClick={handleNotificationClick} className="no-style-no-hover-links" to={{ pathname: `/profiles/${item.sending_user.username}` }} >
               <div className="small-round-pfp">
-                {(item.sender_pfp_url || item.social_pfp_link) && <img src={item.sender_social_pfp_link ? `${item.sender_social_pfp_link}` : `http://127.0.0.1:8000${item.sender_pfp_url}/`} className="small-round-pfp mt-3"></img>}
+                {(item.sender_pfp_url || item.social_pfp_link) && <img src={item.sender_social_pfp_link ? `${item.sender_social_pfp_link}` : `https://travelmedia-api-production.up.railway.app${item.sender_pfp_url}/`} className="small-round-pfp mt-3"></img>}
                 {!item.sender_pfp_url && <i className='bx bx-user-circle small-default-pfp mt-3'></i>}
               </div>
             </Link>

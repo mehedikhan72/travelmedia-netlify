@@ -38,7 +38,7 @@ export default function FetchPeople(props) {
                 <div key={person.id} className="each-person">
                     <div className="display-flex">
                         <div className="display-flex">
-                            {(person.social_pfp_link || person.pfp) && <img className="small-round-pfp" src={person.social_pfp_link ? `${person.social_pfp_link}` : `http://127.0.0.1:8000${person.pfp}/`} />}
+                            {(person.social_pfp_link || person.pfp) && <img className="small-round-pfp" src={person.social_pfp_link ? `${person.social_pfp_link}` : `https://travelmedia-api-production.up.railway.app${person.pfp}/`} />}
                             {(!person.social_pfp_link && !person.pfp) && <img className="small-round-pfp default-pfp-border" src="https://i.pinimg.com/550x/57/70/f0/5770f01a32c3c53e90ecda61483ccb08.jpg" />}
                             <h3 className="m-2"> {person.first_name ? person.first_name + " " + person.last_name : person.username}</h3>
                         </div>

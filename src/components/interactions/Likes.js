@@ -30,7 +30,7 @@ export default function Likes(props) {
 
   const increaseLikes = () => {
     if (localStorage.getItem("access_token")) {
-      fetch(`http://127.0.0.1:8000/api/post/${post_id}/like/`, {
+      fetch(`https://travelmedia-api-production.up.railway.app/api/post/${post_id}/like/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function Likes(props) {
 
   const decreaseLikes = () => {
     if (localStorage.getItem("access_token")) {
-      fetch(`http://127.0.0.1:8000/api/post/${post_id}/unlike/`, {
+      fetch(`https://travelmedia-api-production.up.railway.app/api/post/${post_id}/unlike/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

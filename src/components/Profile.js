@@ -221,7 +221,7 @@ export default function Profile(props) {
     <div>
       <div className="user-info">
         <div className="pfp">
-          {userHasImage && <><img className="pfp" src={userData.social_pfp_link ? `${userData.social_pfp_link}` : `http://127.0.0.1:8000${userData.pfp}/`} alt="pfp" /><h6 className="bio center">{userData.bio}</h6></>}
+          {userHasImage && <><img className="pfp" src={userData.social_pfp_link ? `${userData.social_pfp_link}` : `https://travelmedia-api-production.up.railway.app${userData.pfp}/`} alt="pfp" /><h6 className="bio center">{userData.bio}</h6></>}
           {!userHasImage && <><i className='default-pfp bx bx-user-circle vh-center'></i><h6 className="bio center">{userData.bio}</h6></>}
         </div >
 
