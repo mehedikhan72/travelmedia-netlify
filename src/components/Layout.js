@@ -114,9 +114,6 @@ export default function Layout() {
     const currentUser = `notification-${user.id}`
 
     const socket = new WebSocket(`wss://travelmedia-api-production.up.railway.app/ws/notification/${currentUser}/`);
-    // const socket = new WebSocket(`ws://127.0.0.1:8000/ws/notification/${currentUser}/`);
-
-    console.log(socket)
 
     socket.onmessage = function (e) {
       console.log("Message from server for socket", e.data);
